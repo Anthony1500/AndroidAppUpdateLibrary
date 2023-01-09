@@ -56,7 +56,7 @@ class DownloadApk(var context: Context) : AppCompatActivity() {
             val progress = values[0]
             if (progress != null) {
                 bar.progress = progress
-                msg = if (progress > 99) "Finishing... " else "Downloading... $progress%"
+                msg = if (progress > 99) "Finalizando... " else "Descargando... $progress%"
             }
 
             bar.apply {
@@ -70,9 +70,9 @@ class DownloadApk(var context: Context) : AppCompatActivity() {
             super.onPostExecute(result)
             bar.dismiss()
             if (result != null && result) {
-                Toast.makeText(context, "Update Done", Toast.LENGTH_SHORT).show()
+                Toast.makeText(context, "Actualización completa", Toast.LENGTH_SHORT).show()
             } else {
-                Toast.makeText(context, "Error: Try Again", Toast.LENGTH_SHORT).show()
+                Toast.makeText(context, "Error: Por favor, inténtalo de nuevo", Toast.LENGTH_SHORT).show()
             }
         }
 
